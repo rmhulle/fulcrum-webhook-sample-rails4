@@ -2,6 +2,7 @@ FulcrumWebhookListener::Application.routes.draw do
   resources :webhook_event_requests do
     post 'webhook', on: :collection
   end
+  post '/' => 'webhook_event_requests#webhook'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
