@@ -1,28 +1,93 @@
-== README
+Fulcrum Webhook Listener
+========================
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An application to serve as Webhook endpoint for use in Fulcrum. It simply
+receives the event requests and stick them into the database.
 
-Things you may want to cover:
+This can be used as a foundation for other application.
 
-* Ruby version
+Get it Running
+--------------
 
-* System dependencies
+### Production
 
-* Configuration
+Deploy to Heroku using the following steps:
 
-* Database creation
+#### Create
 
-* Database initialization
+- Clone this repo
+- `cd fulcrum-webhook-listener`
+- [Install the Heroku Toolbelt](https://toolbelt.heroku.com/)
+- `heroku login`
+- `heroku create`
+  - Look for the application name from this
+  - Remember this name/URL for later
 
-* How to run the test suite
+#### Deploy
 
-* Services (job queues, cache servers, search engines, etc.)
+- `git push heroku master`
+- `heroku run rake db:migrate`
 
-* Deployment instructions
+For more help check out [how to get started with Rails
+4](https://devcenter.heroku.com/articles/getting-started-with-rails4) on
+Heroku.
 
-* ...
+#### Use
 
+Go into Fulcrum and add your Heroku application's URL as a webhook.
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+#### See it in Action
+
+This assumes everything is hooked up properly between Fulcrum and this app.
+
+##### From the Site
+
+- Create a form in Fulcrum.
+- Visit the heroku app in a browser.
+- You should see the form create event request in the list of requests.
+
+##### From the Console
+
+- Create a form in Fulcrum.
+- heroku run rails console
+- `WebhookEventRequest.last` should show you the form create event request
+  received.
+
+### Development
+
+#### Install
+
+```
+bundle install
+bundle exec rake db:create
+bundle exec rake db:schema:load
+```
+
+#### Run
+
+```
+bundle exec foreman start
+```
+
+#### Use
+
+In your local Fulcrum server, create a webhook with `localhost:3000` as the
+URL.
+
+#### See it in Action
+
+This assumes everything is hooked up properly between Fulcrum and this app.
+
+#### From the Site
+
+- Create a form in Fulcrum.
+- Visit app (`localhost:3000`) in a browser.
+- You should see the form create event request in the list of requests.
+
+##### From the Console
+
+- Create a form in Fulcrum.
+- `bundle exec rails console`
+- `WebhookEventRequest.last` should show you the form create event request
+  received.
+
