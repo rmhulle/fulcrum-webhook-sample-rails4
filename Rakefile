@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-FulcrumWebhookListener::Application.load_tasks
+FulcrumWebhookSample::Application.load_tasks

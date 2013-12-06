@@ -1,4 +1,4 @@
-FulcrumWebhookListener::Application.routes.draw do
+FulcrumWebhookSample::Application.routes.draw do
   resources :webhook_event_requests do
     post 'webhook', on: :collection
   end
