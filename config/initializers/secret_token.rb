@@ -9,4 +9,9 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-FulcrumWebhookSample::Application.config.secret_key_base = '2c00ff82e1a50db277da1deea88c427b8a03d192cf452154c517bdc91933203abd15c799e26e3ea88dc1b0c8eeaa1224367491e1147a72db8cf9002bbde583c3'
+FulcrumWebhookSample::Application.
+  config.secret_key_base = if Rails.env.development? || Rails.env.test?
+      'x' * 30
+    else
+      ENV['SECRET_TOKEN']
+    end
