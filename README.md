@@ -1,7 +1,7 @@
-Fulcrum Webhook Listener
-========================
+Fulcrum Webhook Sample - Rails 4
+================================
 
-An application to serve as Webhook endpoint for use in Fulcrum. It simply
+A Rails 4 application to serve as Webhook endpoint for use in Fulcrum. It simply
 receives the event requests and stick them into the database.
 
 This can be used as a foundation for other application.
@@ -16,12 +16,15 @@ Deploy to Heroku using the following steps:
 #### Create
 
 - Clone this repo
-- `cd fulcrum-webhook-listener`
+- `cd fulcrum-webhook-sample-rails4`
 - [Install the Heroku Toolbelt](https://toolbelt.heroku.com/)
 - `heroku login`
 - `heroku create`
   - Look for the application name from this
   - Remember this name/URL for later
+- `ruby -e "require 'securerandom'; puts SecureRandom.hex(128);"`
+  - Use this string in the next command.
+- `heroku config:set SECRET_TOKEN=**<string from previous command output>**`
 
 #### Deploy
 
