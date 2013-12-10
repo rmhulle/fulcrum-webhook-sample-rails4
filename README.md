@@ -24,7 +24,7 @@ Deploy to Heroku using the following steps:
   - Remember this name/URL for later
 - `ruby -e "require 'securerandom'; puts SecureRandom.hex(128);"`
   - Use this string in the next command.
-- `heroku config:set SECRET_TOKEN=**<string from previous command output>**`
+- `heroku config:set SECRET_TOKEN=<string from previous command output>`
 
 #### Deploy
 
