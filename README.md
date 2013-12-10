@@ -20,11 +20,11 @@ Deploy to Heroku using the following steps:
 - [Install the Heroku Toolbelt](https://toolbelt.heroku.com/)
 - `heroku login`
 - `heroku create`
-  - Look for the application name from this
-  - Remember this name/URL for later
 - `ruby -e "require 'securerandom'; puts SecureRandom.hex(128);"`
   - Use this string in the next command.
 - `heroku config:set SECRET_TOKEN=<string from previous command output>`
+- `heroku domains`
+  - Remember this URL for later
 
 #### Deploy
 
