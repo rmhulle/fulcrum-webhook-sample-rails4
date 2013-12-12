@@ -23,13 +23,13 @@ Deploy to Heroku using the following steps:
 - `ruby -e "require 'securerandom'; puts SecureRandom.hex(128);"`
   - Use this string in the next command.
 - `heroku config:set SECRET_TOKEN=<string from previous command output>`
-- `heroku domains`
-  - Remember this URL for later
 
 #### Deploy
 
 - `git push heroku master`
 - `heroku run rake db:migrate`
+- `heroku domains`
+  - Remember this URL for later.
 
 For more help check out [how to get started with Rails
 4](https://devcenter.heroku.com/articles/getting-started-with-rails4) on
