@@ -94,3 +94,7 @@ This assumes everything is hooked up properly between Fulcrum and this app.
 - `WebhookEventRequest.last` should show you the form create event request
   received.
 
+License
+--------------
+
+MIT
